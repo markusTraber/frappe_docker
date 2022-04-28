@@ -17,7 +17,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-changeit}
     volumes:
-      - ${HOME}/data/mariadb:/var/lib/mysql
+      # MT: changed volume path
+      - ${HOME}/volumes/erpnext-mariadb:/var/lib/mysql
     networks:
       - mariadb-network
 

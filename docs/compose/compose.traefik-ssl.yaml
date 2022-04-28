@@ -42,4 +42,5 @@ services:
     ports:
       - 443:443
     volumes:
-      - ${HOME}/data/traefik/certificates:/certificates
+      # MT: changed volume path
+      - ${HOME}/volumes/traefik/certificates:/certificates
