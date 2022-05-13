@@ -5,7 +5,7 @@ x-depends-on-configurator: &depends_on_configurator
 
 x-backend-defaults: &backend_defaults
   <<: *depends_on_configurator
-  image: frappe/frappe-worker:${FRAPPE_VERSION:?No Frappe version set}
+  image: ghcr.io/markustraber/custom_frappe_docker/worker:${FRAPPE_VERSION:?No Frappe version set}
   volumes:
     - sites:/home/frappe/frappe-bench/sites
 
@@ -29,7 +29,7 @@ services:
       - assets:/home/frappe/frappe-bench/sites/assets:ro
 
   frontend:
-    image: frappe/frappe-nginx:${FRAPPE_VERSION}
+    image: ghcr.io/markustraber/custom_frappe_docker/nginx:${FRAPPE_VERSION}
     environment:
       BACKEND: backend:8000
       SOCKETIO: websocket:9000

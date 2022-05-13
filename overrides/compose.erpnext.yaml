@@ -1,5 +1,5 @@
 x-erpnext-backend-image: &erpnext_backend_image
-  image: frappe/erpnext-worker:${ERPNEXT_VERSION:?No ERPNext version set}
+  image: ghcr.io/markustraber/custom_frappe_docker/worker:${ERPNEXT_VERSION:?No ERPNext version set}
 
 services:
   configurator:
@@ -9,7 +9,7 @@ services:
     <<: *erpnext_backend_image
 
   frontend:
-    image: frappe/erpnext-nginx:${ERPNEXT_VERSION}
+    image: ghcr.io/markustraber/custom_frappe_docker/nginx:${ERPNEXT_VERSION}
 
   queue-short:
     <<: *erpnext_backend_image
