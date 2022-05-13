@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   database:
-    container_name: mariadb-database
+    container_name: mariadb-erpnext
     image: mariadb:10.6
     restart: unless-stopped
     healthcheck:
